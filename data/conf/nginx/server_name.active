@@ -1,0 +1,1 @@
+server_name mail.tebingtinggikota.go.id autodiscover.* autoconfig.* ;
