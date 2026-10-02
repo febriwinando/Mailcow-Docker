@@ -1,0 +1,60 @@
+# -------------------------------------------------------------------------
+# Mailcow Dockerized .gitignore
+# Mencegah file sensitif, kredensial, kunci SSL, database dump, dan cache terupload ke Git
+# -------------------------------------------------------------------------
+
+# 1. Konfigurasi Sensitif & Kredensial Environment
+mailcow.conf
+.env
+data/web/inc/vars.local.inc.php
+data/conf/sogo/cron.creds
+data/conf/rspamd/override.d/*.key
+data/conf/rspamd/override.d/*.secret
+data/conf/postfix/sni.map
+data/conf/postfix/custom_postscreen_whitelist.cidr
+
+# 2. Database Dumps & Backups
+*.sql
+*.sql.gz
+*.sql.bz2
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+mailcow.sql
+backups/
+backup/
+
+# 3. SSL / TLS Certificates & Private Keys
+data/assets/ssl/*
+!data/assets/ssl/.gitkeep
+!data/assets/ssl-example/
+data/assets/ssl/acme/
+*.pem
+*.key
+*.crt
+*.csr
+*.pfx
+*.p12
+*.bak
+
+# Jangan abaikan ssl-example
+!data/assets/ssl-example/*.pem
+!data/assets/ssl-example/*.key
+
+# 4. Cache & Temporary Files
+data/web/templates/cache/*
+!data/web/templates/cache/.gitkeep
+*.tmp
+*.temp
+*.log
+.DS_Store
+Thumbs.db
+
+# 5. IDE & Editor Config
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
